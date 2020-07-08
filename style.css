@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-image: url('images/me.png');
+    background-color: teal;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center 6vw;
+    font-size: 14px;
+    color: white;
+    font-family: 'Forum',cursive;
+}
+
+@keyframes hueRotate {
+    0% {
+        background-color: rgb(36, 36, 61);
+    }
+    100% {
+        background-color: hue-rotate(20deg);
+    }
+}
+
+.grid-container {
+    display:grid;
+    grid-template-rows: 5vw;
+    grid-auto-rows: 9vw;
+    grid-template-columns: 2fr repeat(5,1fr);
+    grid-gap:1vw;
+    animation: hueRotate 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.grid-container > div {
+    background-color: teal;
+    outline-style: solid;
+    outline-width: 1vw;
+    outline-color: teal;
+    animation: hueRotate 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.grid-container > div.transparent {
+    background: transparent;
+    outline-color: transparent;
+}
+
+.span-2 {
+    grid-column-end: span 2;
+}
+
+.pl-1 {
+    padding-inline-start: 1em;
+}
+
+.align-right {
+    text-align: right;
+    line-height: 1.5em;
+}
+
+.role {
+    grid-row-end: span 4;
+    writing-mode: tb;
+    letter-spacing: 0.5rem;
+    line-height: 1.7;
+}
+
+.role > p:nth-child(2) {
+    padding-inline-start: 20px;
+}
+
+.experiment {
+    letter-spacing: .7px;
+}
+
+.experiment > p:nth-child(2) {
+    padding-left: 2em;
+}
+
+.author {
+    text-align: left;
+}
+
+.author p:nth-child(1) {
+    padding-left: 30%;
+}
+
+.author p:nth-child(2) {
+    padding-left: 10%;
+}
+
+@keyframes gridcolendAnimate{
+    0% {grid-column-end: span 100;}
+    100% {grid-column-end: span 1;}
+}
+
+/*Fluid typography*/
+@media screen and (min-width: 320px) {
+    html{
+    font-size: calc(14px + 6*((100vw - 320px) / 680));
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 22px;
+    }
+}
