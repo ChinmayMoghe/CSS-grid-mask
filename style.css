@@ -5,58 +5,50 @@
 }
 
 html {
-    background-image: url('images/me.png');
-    background-color: teal;
+    /* background-color: teal; */
     background-size: 100vw;
     background-repeat: no-repeat;
     background-position: center 6vw;
     font-size: 14px;
-    color: white;
-    font-family: 'Forum',cursive;
+    font-family: 'Forum', cursive;
 }
 
-@keyframes hueRotate {
-    0% {
-        background-color: rgb(36, 36, 61);
-    }
-    100% {
-        background-color: hue-rotate(20deg);
-    }
-}
 
 .grid-container {
-    display:grid;
-    grid-template-rows: 5vw;
+    background-image: url('images/me.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-rows: 6vw;
     grid-auto-rows: 9vw;
-    grid-template-columns: 2fr repeat(5,1fr);
-    grid-gap:1vw;
-    animation: hueRotate 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    grid-template-columns: 2fr repeat(5, 1fr);
+    filter: hue-rotate(310deg);
 }
 
-.grid-container > div {
-    background-color: teal;
+
+.grid-container>div {
+    padding: 1rem;
     outline-style: solid;
     outline-width: 1vw;
     outline-color: teal;
-    animation: hueRotate 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    background-color: #9b7db11f;
+    outline-color: transparent;
+    font-size: 2rem;
+    backdrop-filter: saturate(6) hue-rotate(40deg);
 }
 
-.grid-container > div.transparent {
-    background: transparent;
-    outline-color: transparent;
-}
 
 .span-2 {
     grid-column-end: span 2;
 }
 
-.pl-1 {
-    padding-inline-start: 1em;
+.align-center {
+    text-align: center;
 }
 
 .align-right {
     text-align: right;
-    line-height: 1.5em;
 }
 
 .role {
@@ -64,36 +56,23 @@ html {
     writing-mode: tb;
     letter-spacing: 0.5rem;
     line-height: 1.7;
+    backdrop-filter: invert(1) saturate(-90);
 }
 
-.role > p:nth-child(2) {
+.role>p:nth-child(2) {
     padding-inline-start: 20px;
 }
 
-.experiment {
-    letter-spacing: .7px;
-}
-
-.experiment > p:nth-child(2) {
-    padding-left: 2em;
-}
-
-.author {
+div.author {
     text-align: left;
+    font-size: 3rem;
 }
 
-.author p:nth-child(1) {
-    padding-left: 30%;
-}
-
-.author p:nth-child(2) {
-    padding-left: 10%;
-}
 
 /*Fluid typography*/
 @media screen and (min-width: 320px) {
-    html{
-    font-size: calc(14px + 6*((100vw - 320px) / 680));
+    html {
+        font-size: calc(14px + 6*((100vw - 320px) / 680));
     }
 }
 
