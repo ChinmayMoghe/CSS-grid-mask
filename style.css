@@ -16,28 +16,29 @@ html {
 
 .grid-container {
     background-image: url('images/me.png');
-    background-position: center;
+    background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: 6vw;
-    grid-auto-rows: 9vw;
-    grid-template-columns: 2fr repeat(5, 1fr);
-    filter: hue-rotate(310deg);
+    height: 100vh;
+    grid-template-rows: minmax(min-content, 6vw);
+    grid-template-columns: minmax(min-content, 2fr) repeat(5, minmax(min-content, 1fr));
+    filter: saturate(6) hue-rotate(340deg);
+    overflow: scroll;
 }
 
 
 .grid-container>div {
-    padding: 1rem;
     outline-style: solid;
     outline-width: 1vw;
-    outline-color: teal;
-    background-color: #9b7db11f;
+    background-color: transparent;
     outline-color: transparent;
     font-size: 2rem;
-    backdrop-filter: saturate(6) hue-rotate(40deg);
 }
 
+div.transparent {
+    background-color: transparent;
+}
 
 .span-2 {
     grid-column-end: span 2;
@@ -51,16 +52,16 @@ html {
     text-align: right;
 }
 
-.role {
+div.role {
     grid-row-end: span 4;
     writing-mode: tb;
     letter-spacing: 0.5rem;
     line-height: 1.7;
-    backdrop-filter: invert(1) saturate(-90);
 }
 
+
 .role>p:nth-child(2) {
-    padding-inline-start: 20px;
+    margin-inline-start: 40px;
 }
 
 div.author {
