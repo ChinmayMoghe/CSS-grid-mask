@@ -15,15 +15,15 @@ html {
 
 
 .grid-container {
-    background-image: url('images/parrotos.jpg');
-    background-position: right center;
+    background-image: linear-gradient(violet, indigo, blue, green, yellow, orange, red), url('images/parrotos.jpg');
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
     height: 100vh;
-    grid-template-rows: minmax(min-content, 6vw);
-    grid-template-columns: minmax(min-content, 2fr) repeat(5, minmax(min-content, 1fr));
-    filter: saturate(6) hue-rotate(340deg);
+    grid-template-rows: repeat(10, minmax(20px, 1fr));
+    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    background-blend-mode: color;
     overflow: scroll;
 }
 
@@ -31,42 +31,21 @@ html {
 .grid-container>div {
     outline-style: solid;
     outline-width: 1vw;
-    background-color: transparent;
+    background-color: cyan;
     outline-color: transparent;
     font-size: 2rem;
 }
 
-div.transparent {
-    background-color: transparent;
+div.red-background {
+    mix-blend-mode: color-burn;
 }
 
-.span-2 {
-    grid-column-end: span 2;
+div.blue-background {
+    mix-blend-mode: exclusion;
 }
 
-.align-center {
-    text-align: center;
-}
-
-.align-right {
-    text-align: right;
-}
-
-div.role {
-    grid-row-end: span 4;
-    writing-mode: tb;
-    letter-spacing: 0.5rem;
-    line-height: 1.7;
-}
-
-
-.role>p:nth-child(2) {
-    margin-inline-start: 40px;
-}
-
-div.author {
-    text-align: left;
-    font-size: 3rem;
+div.green-background {
+    mix-blend-mode: multiply;
 }
 
 
